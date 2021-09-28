@@ -1,4 +1,4 @@
-原始代码是这个： https://github.com/davecgh/go-spew，我拿过来改一下，增加了颜色，分隔线，简化了类型，长度等输出
+原始代码是这个： https://github.com/davecgh/go-spew 我拿过来改一下，增加了颜色，分隔线，简化了类型，长度等输出
 
 $ go get -u github.com/dugei/pretty/spew
 ```
