@@ -26,6 +26,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var (
@@ -530,6 +531,32 @@ spew.Config.  See ConfigState for options documentation.
 See Fdump if you would prefer dumping to an arbitrary io.Writer or Sdump to
 get the formatted result as a string.
 */
-func Dump(a ...interface{}) {
+func DetailDump(a ...interface{}) {
+	Config.DisableCapacities        = false
+	Config.DisableShowLen           = false
+	Config.HighlightKey             = false
+	Config.DisableShowType          = false
+	Config.DisablePointerAddresses  = false
 	fdump(&Config, os.Stdout, a...)
+}
+
+func Dump(a ...interface{}) {
+	Config.DisableCapacities        = true
+	Config.DisableShowLen           = true
+	Config.HighlightKey             = true
+	Config.DisableShowType          = true
+	Config.DisablePointerAddresses  = true
+
+	currentTime := time.Now().Format("2006-01-02 15:04:05")
+	strPlus := strings.Repeat("+", 40)
+	fmt.Printf("\n%c[0;40;32m%s %s %s %c[0m\n\n", 0x1B, strPlus, currentTime, strPlus, 0x1B)
+	length := len(a)
+	for k, one := range a {
+		fdump(&Config, os.Stdout, one)
+		if k != (length - 1) {
+			strStep := strings.Repeat("-", 100)
+			fmt.Printf("\n%c[36m%s%c[0m\n\n", 0x1B, strStep, 0x1B)
+		}
+	}
+	fmt.Printf("\n%c[0;40;32m%s %s %s %c[0m\n\n", 0x1B, strPlus, currentTime, strPlus, 0x1B)
 }
