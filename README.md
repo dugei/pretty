@@ -17,8 +17,9 @@ str := spew.Sdump(myVar1, myVar2, ...)
 
 ![查看示例图片](https://github.com/dugei/pretty/blob/main/dump.jpg)
 
-```
+
 原始的详细输出，有类型，长度等信息，无颜色，无分隔线
+
 ```
 (map[string]interface {}) (len=7)) {
     (string) (len=4)) "info": (main.Student) {
