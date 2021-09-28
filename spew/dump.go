@@ -129,6 +129,7 @@ func (d *dumpState) dumpPtr(v reflect.Value) {
 	d.w.Write(closeParenBytes)
 
 	// Display pointer information.
+
 	if !d.cs.DisablePointerAddresses && len(pointerChain) > 0 {
 		d.w.Write(openParenBytes)
 		for i, addr := range pointerChain {
@@ -151,6 +152,7 @@ func (d *dumpState) dumpPtr(v reflect.Value) {
 
 	default:
 		d.ignoreNextType = true
+		d.ignoreNextIndent = true
 		d.dump(ve)
 	}
 	d.w.Write(closeParenBytes)
