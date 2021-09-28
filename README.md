@@ -13,7 +13,7 @@ spew.Fdump(someWriter, myVar1, myVar2, ...)
 str := spew.Sdump(myVar1, myVar2, ...)
 ```
 
-简化输出，map,struct的key加了颜色，var1,var2之间加了分隔线，每一次打印上下加了时间线
+简化输出，map,struct的key加了颜色，var1,var2之间加了分隔线，每一次打印上下加了时间线,查看示例图片： https://github.com/dugei/pretty/blob/main/dump.jpg
 ```
 ++++++++++++++++++++++++++++++++++++++++ 2021-09-28 20:02:41 ++++++++++++++++++++++++++++++++++++++++
 
