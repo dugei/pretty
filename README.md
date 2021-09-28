@@ -31,7 +31,7 @@ http://localhost:6060/pkg/github.com/davecgh/go-spew/spew
 ## Installation
 
 ```bash
-$ go get -u github.com/davecgh/go-spew/spew
+$ go get -u github.com/dugei/pretty/spew
 ```
 
 ## Quick Start
@@ -39,7 +39,7 @@ $ go get -u github.com/davecgh/go-spew/spew
 Add this import line to the file you're working in:
 
 ```Go
-import "github.com/davecgh/go-spew/spew"
+import "github.com/dugei/go-spew/spew"
 ```
 
 To dump a variable with full newlines, indentation, type, and pointer
@@ -75,7 +75,7 @@ import (
     "html"
     "net/http"
 
-    "github.com/davecgh/go-spew/spew"
+    "github.com/dugei/go-spew/spew"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
