@@ -115,6 +115,7 @@ var Config = ConfigState{
 	DisableShowLen:     true,
 	HighlightKey:       true,
 	DisableShowType:    true,
+    DisablePointerAddresses: true,
 }
 
 // Errorf is a wrapper for fmt.Errorf that treats each argument as if it were
